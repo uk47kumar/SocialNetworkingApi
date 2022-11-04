@@ -6,6 +6,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.example.demo.users.User;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 @Table(name = "post")
 public class Post {
@@ -15,6 +17,7 @@ public class Post {
 	private String details;
 	
 	@ManyToOne
+	@JsonBackReference
 	private User user;
 	
 	public Post() {

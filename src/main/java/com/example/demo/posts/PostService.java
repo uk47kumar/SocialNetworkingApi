@@ -1,6 +1,7 @@
 package com.example.demo.posts;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,7 +21,8 @@ public class PostService {
 //				.findFirst()
 //				.orElse(null);
 //		return post;
-		return postRepository.getOne(id);
+		Optional<Post> result = postRepository.findById(id);
+		return result.get();
 	}
 	
 	public Post addPost(Post post) {

@@ -12,6 +12,7 @@ import javax.persistence.Table;
 
 import com.example.demo.locations.Location;
 import com.example.demo.posts.Post;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 @Table(name = "user")
@@ -23,9 +24,11 @@ public class User {
 	private String email;
 
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
+	@JsonManagedReference
 	private List<Post> posts = new ArrayList<>();
 
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
+	@JsonManagedReference
 	private List<Location> locations = new ArrayList<>();
 	
 	
