@@ -1,5 +1,7 @@
 package com.example.demo.posts;
 import java.util.List;
+
+import com.example.demo.users.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;

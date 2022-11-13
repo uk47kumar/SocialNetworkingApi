@@ -17,82 +17,81 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 @Entity
 @Table(name = "user")
 public class User {
-	@Id
-	private String id;
-	private String firstname;
-	private String lastname;
-	private String email;
+    @Id
+    private String id;
+    private String firstname;
+    private String lastname;
+    private String email;
 
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
-	@JsonManagedReference
-	private List<Post> posts = new ArrayList<>();
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
+    @JsonManagedReference
+    private List<Post> posts = new ArrayList<>();
 
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
-	@JsonManagedReference
-	private List<Location> locations = new ArrayList<>();
-	
-	
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
+    @JsonManagedReference
+    private List<Location> locations = new ArrayList<>();
 
-	public User() {
-		super();
-	}
 
-	public User(String id, String firstname, String lastname, String email, List<Post> posts,
-			List<Location> locations) {
-		this.id = id;
-		this.firstname = firstname;
-		this.lastname = lastname;
-		this.email = email;
-		this.posts = posts;
-		this.locations = locations;
-	}
+    public User() {
+        super();
+    }
 
-	public String getId() {
-		return id;
-	}
+    public User(String id, String firstname, String lastname, String email, List<Post> posts,
+                List<Location> locations) {
+        this.id = id;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.email = email;
+        this.posts = posts;
+        this.locations = locations;
+    }
 
-	public void setId(String id) {
-		this.id = id;
-	}
+    public String getId() {
+        return id;
+    }
 
-	public String getFirstname() {
-		return firstname;
-	}
+    public void setId(String id) {
+        this.id = id;
+    }
 
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
-	}
+    public String getFirstname() {
+        return firstname;
+    }
 
-	public String getLastname() {
-		return lastname;
-	}
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
 
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
-	}
+    public String getLastname() {
+        return lastname;
+    }
 
-	public String getEmail() {
-		return email;
-	}
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    public String getEmail() {
+        return email;
+    }
 
-	public List<Post> getPosts() {
-		return posts;
-	}
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-	public void setPosts(List<Post> posts) {
-		this.posts = posts;
-	}
+    public List<Post> getPosts() {
+        return posts;
+    }
 
-	public List<Location> getLocations() {
-		return locations;
-	}
+    public void setPosts(List<Post> posts) {
+        this.posts = posts;
+    }
 
-	public void setLocations(List<Location> locations) {
-		this.locations = locations;
-	}
+    public List<Location> getLocations() {
+        return locations;
+    }
+
+    public void setLocations(List<Location> locations) {
+        this.locations = locations;
+    }
 
 }
